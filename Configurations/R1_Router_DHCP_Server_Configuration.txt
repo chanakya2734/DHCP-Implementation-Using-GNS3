@@ -1,1 +1,18 @@
+R1# configure terminal
+R1(config)# hostname DHCP_Server
+DHCP_Server(config)# interface e6/0
+DHCP_Server(config-if)# ip address 192.168.1.100 255.255.255.0
+DHCP_Server(config-if)# no shutdown
+DHCP_Server(config-if)# exit
+DHCP_Server(config)# ip dhcp pool SBI-BANk
+DHCP_Server(config)# network 192.168.1.0 255.255.255.0
+DHCP_Server(config)# default-router 192.168.1.100
+DHCP_Server(config)# dns-server 192.168.1.101 192.168.1.102
+DHCP_Server(config)# exit
 
+Verification:
+DHCP_Server# show running-config|section dhcp
+ip dhcp pool SBI-BANK
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.100
+dns-server 192.168.1.101 192.168.1.102
