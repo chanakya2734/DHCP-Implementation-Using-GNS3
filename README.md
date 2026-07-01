@@ -90,7 +90,7 @@ ip dhcp pool SBI-BANK
 
 ---
 
-### Verification Commands(R1)
+### Verification Commands (R1)
 
 #### DHCP Server Verification (R1)
 
