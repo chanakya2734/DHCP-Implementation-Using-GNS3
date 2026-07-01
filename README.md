@@ -88,7 +88,9 @@ ip dhcp pool SBI-BANK
  default-router 192.168.1.100
  dns-server 192.168.1.101 192.168.1.102
 
-### Verification Commands
+---
+
+### Verification Commands(R1)
 
 #### DHCP Server Verification (R1)
 
