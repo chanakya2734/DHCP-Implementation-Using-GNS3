@@ -1,1 +1,9 @@
+R2# configure terminal
+R2(config)# interface e6/0
+R2(config-if)# ip address dhcp
+R2(config-if)# no shutdown
+R2(config-if)# end
 
+Verification:
+R2# ip address 192.168.1.2 mask 255.255.255.0 hostname R2
+R2# show ip interface brief
