@@ -91,3 +91,162 @@ ip dhcp pool SBI-BANK
  default-router 192.168.1.100
  dns-server 192.168.1.101 192.168.1.102
 
+Verification performed using:
+
+'''bash
+show running-config | section dhcp
+
+### DHCP Client Configuration
+### Router: R2
+
+Configured R2 interface to obtain IP address automatically:
+
+interface e6/0
+ ip address dhcp
+ no shutdown
+
+Verification performed using:
+
+show ip interface brief
+
+### DHCP DORA Process Analysis
+
+The DHCP packet exchange process was analyzed using Wireshark.
+
+### DHCP Packet Sequence
+-DHCP Discover
+-DHCP Offer
+-DHCP Request
+-DHCP Acknowledgement
+
+This process confirms successful IP address allocation from the DHCP server to network clients.
+
+### Verification
+### PC1 Verification
+
+PC1 successfully obtained an IP address using:
+
+ip dhcp
+
+Assigned:
+
+IP Address : 192.168.1.1/24
+Gateway    : 192.168.1.100
+
+### Router R2 Verification
+
+Verified DHCP address assignment using:
+
+show ip interface brief
+
+Assigned:
+
+Ethernet6/0 : 192.168.1.2
+
+### PC2 Verification
+
+PC2 successfully obtained an IP address using:
+
+ip dhcp
+
+Assigned:
+
+IP Address : 192.168.1.3/24
+Gateway    : 192.168.1.100
+
+### Connectivity Test
+### PC1 to PC2
+
+ping 192.168.1.3
+
+Successful communication verified.
+
+### PC2 to R1
+
+ping 192.168.1.100
+
+Successful communication verified.
+
+### R2 to R1
+
+ping 192.168.1.100
+
+Successful communication verified.
+
+### DHCP Packet Analysis
+
+Wireshark was used to capture and analyze:
+
+-DHCP Discover packets
+-DHCP Offer packets
+-DHCP Request packets
+-DHCP Acknowledgement packets
+-ARP packets
+-ICMP packets
+
+### Screenshots
+
+Available in the screenshots folder:
+
+-01_GNS3_Topology_With_Wireshark.png
+-02_PC1_DHCP_Verification.png
+-03_Router_R2_DHCP_Verification.png
+-04_PC2_DHCP_Verification.png
+-05_DHCP_Server_Configuration.png
+
+### Project Structure
+
+DHCP-Implementation-Using-GNS3
+
+├── README.md
+
+├── topology
+
+│ └── DHCP_Network_Topology.png
+
+├── screenshots
+
+│ ├── 01_GNS3_Topology_With_Wireshark.png
+
+│ ├── 02_PC1_DHCP_Verification.png
+
+│ ├── 03_Router_R2_DHCP_Verification.png
+
+│ ├── 04_PC2_DHCP_Verification.png
+
+│ └── 05_DHCP_Server_Configuration.png
+
+├── configurations
+
+│ ├── PC1_DHCP_Client_Configuration.txt
+
+│ ├── PC2_DHCP_Client_Configuration.txt
+
+│ ├── R1_Router_DHCP_Server_Configuration.txt
+
+│ └── R2_Router_DHCP_Server_Client_Configuration.txt
+
+└── Project file
+
+└── DHCP_Implementation_Lab.gns3
+
+### Learning Outcomes
+
+-DHCP Configuration
+-DHCP Server Implementation
+-DHCP Client Configuration
+-DHCP DORA Packet Analysis
+-Wireshark Packet Capturing
+-Network Troubleshooting
+-IP Address Management
+-Cisco Router Configuration
+-Network Verification
+-GNS3 Network Simulation
+
+### Author
+
+Chanakya Burugu
+
+Computer Science and Engineering (Networks)
+
+Networking and Infrastructure Enthusiast
