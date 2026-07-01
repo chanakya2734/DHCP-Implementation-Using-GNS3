@@ -1,8 +1,6 @@
 # DHCP-Implementation-Using-GNS3
 Implemented and simulated DHCP services using GNS3, automated IP address allocation, analyzed DHCP DORA packet exchange using Wireshark, and verified network connectivity through end-to-end testing.
 
-# DHCP Implementation using GNS3 Tool
-
 ## Project Overview
 
 This project demonstrates the implementation and simulation of the Dynamic Host Configuration Protocol (DHCP) using the GNS3 network simulation platform. The project focuses on automating IP address allocation to network devices, analyzing the DHCP packet exchange process using Wireshark, and verifying network connectivity between clients and routers.
