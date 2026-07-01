@@ -94,7 +94,6 @@ ip dhcp pool SBI-BANK
 
 Verification performed using:
 
-```bash
 show running-config | section dhcp
 show ip dhcp binding
 show ip dhcp pool
