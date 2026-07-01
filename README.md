@@ -87,8 +87,7 @@ ip dhcp pool SBI-BANK
  network 192.168.1.0 255.255.255.0
  default-router 192.168.1.100
  dns-server 192.168.1.101 192.168.1.102
-
----
+```
 
 ### Verification Commands (R1)
 
@@ -101,9 +100,6 @@ show running-config | section dhcp
 show ip dhcp binding
 show ip dhcp pool
 ```
-
----
-
 ### DHCP Client Configuration
 
 #### Router: R2
